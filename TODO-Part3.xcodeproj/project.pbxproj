@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2328414F1F9F257F00E17477 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 232841431F9F257F00E17477 /* Info.plist */; };
+		232841511F9F257F00E17477 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232841461F9F257F00E17477 /* HoshiTextField.swift */; };
+		232841551F9F285D00E17477 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232841541F9F285D00E17477 /* TextFieldEffects.swift */; };
 		23AAEDC11F9ED1120055702B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDC01F9ED1120055702B /* AppDelegate.swift */; };
 		23AAEDC31F9ED1120055702B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDC21F9ED1120055702B /* ViewController.swift */; };
 		23AAEDC61F9ED1120055702B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23AAEDC41F9ED1120055702B /* Main.storyboard */; };
@@ -14,6 +17,8 @@
 		23AAEDCB1F9ED1130055702B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23AAEDC91F9ED1130055702B /* LaunchScreen.storyboard */; };
 		23AAEDD61F9ED1130055702B /* TODO_Part3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDD51F9ED1130055702B /* TODO_Part3Tests.swift */; };
 		23AAEDE11F9ED1130055702B /* TODO_Part3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDE01F9ED1130055702B /* TODO_Part3UITests.swift */; };
+		23D1C3EA1F9EEED700074FBE /* background in Resources */ = {isa = PBXBuildFile; fileRef = 23D1C3E81F9EEED600074FBE /* background */; };
+		23D1C3EB1F9EEED700074FBE /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D1C3E91F9EEED600074FBE /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232841431F9F257F00E17477 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../TextFieldEffects-master/TextFieldEffects/TextFieldEffects/Info.plist"; sourceTree = "<group>"; };
+		232841451F9F257F00E17477 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldEffects.h; path = "../../TextFieldEffects-master/TextFieldEffects/TextFieldEffects/TextFieldEffects.h"; sourceTree = "<group>"; };
+		232841461F9F257F00E17477 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = "../../TextFieldEffects-master/TextFieldEffects/TextFieldEffects/HoshiTextField.swift"; sourceTree = "<group>"; };
+		232841541F9F285D00E17477 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldEffects.swift; path = "../../TextFieldEffects-master/TextFieldEffects/TextFieldEffects/TextFieldEffects.swift"; sourceTree = "<group>"; };
 		23AAEDBD1F9ED1120055702B /* TODO-Part3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TODO-Part3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23AAEDC01F9ED1120055702B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23AAEDC21F9ED1120055702B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +56,8 @@
 		23AAEDDC1F9ED1130055702B /* TODO-Part3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TODO-Part3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23AAEDE01F9ED1130055702B /* TODO_Part3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_Part3UITests.swift; sourceTree = "<group>"; };
 		23AAEDE21F9ED1130055702B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23D1C3E81F9EEED600074FBE /* background */ = {isa = PBXFileReference; lastKnownFileType = file; name = background; path = ../../../image/background; sourceTree = "<group>"; };
+		23D1C3E91F9EEED600074FBE /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../image/logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +85,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2328413C1F9F250B00E17477 /* TextFieldEffects */ = {
+			isa = PBXGroup;
+			children = (
+				232841541F9F285D00E17477 /* TextFieldEffects.swift */,
+				232841461F9F257F00E17477 /* HoshiTextField.swift */,
+				232841431F9F257F00E17477 /* Info.plist */,
+				232841451F9F257F00E17477 /* TextFieldEffects.h */,
+			);
+			path = TextFieldEffects;
+			sourceTree = "<group>";
+		};
 		23AAEDB41F9ED1120055702B = {
 			isa = PBXGroup;
 			children = (
+				2328413C1F9F250B00E17477 /* TextFieldEffects */,
 				23AAEDBF1F9ED1120055702B /* TODO-Part3 */,
 				23AAEDD41F9ED1130055702B /* TODO-Part3Tests */,
 				23AAEDDF1F9ED1130055702B /* TODO-Part3UITests */,
@@ -97,6 +120,7 @@
 		23AAEDBF1F9ED1120055702B /* TODO-Part3 */ = {
 			isa = PBXGroup;
 			children = (
+				23D1C3E71F9EEE9800074FBE /* Image */,
 				23AAEDC01F9ED1120055702B /* AppDelegate.swift */,
 				23AAEDC21F9ED1120055702B /* ViewController.swift */,
 				23AAEDC41F9ED1120055702B /* Main.storyboard */,
@@ -123,6 +147,15 @@
 				23AAEDE21F9ED1130055702B /* Info.plist */,
 			);
 			path = "TODO-Part3UITests";
+			sourceTree = "<group>";
+		};
+		23D1C3E71F9EEE9800074FBE /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				23D1C3E81F9EEED600074FBE /* background */,
+				23D1C3E91F9EEED600074FBE /* logo.png */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				23AAEDCB1F9ED1130055702B /* LaunchScreen.storyboard in Resources */,
+				23D1C3EB1F9EEED700074FBE /* logo.png in Resources */,
+				2328414F1F9F257F00E17477 /* Info.plist in Resources */,
 				23AAEDC81F9ED1130055702B /* Assets.xcassets in Resources */,
+				23D1C3EA1F9EEED700074FBE /* background in Resources */,
 				23AAEDC61F9ED1120055702B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +297,8 @@
 			files = (
 				23AAEDC31F9ED1120055702B /* ViewController.swift in Sources */,
 				23AAEDC11F9ED1120055702B /* AppDelegate.swift in Sources */,
+				232841551F9F285D00E17477 /* TextFieldEffects.swift in Sources */,
+				232841511F9F257F00E17477 /* HoshiTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
