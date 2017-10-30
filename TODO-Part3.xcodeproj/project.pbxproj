@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2328414F1F9F257F00E17477 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 232841431F9F257F00E17477 /* Info.plist */; };
-		232841511F9F257F00E17477 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232841461F9F257F00E17477 /* HoshiTextField.swift */; };
-		232841551F9F285D00E17477 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232841541F9F285D00E17477 /* TextFieldEffects.swift */; };
 		23AAEDC11F9ED1120055702B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDC01F9ED1120055702B /* AppDelegate.swift */; };
 		23AAEDC31F9ED1120055702B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDC21F9ED1120055702B /* ViewController.swift */; };
-		23AAEDC61F9ED1120055702B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23AAEDC41F9ED1120055702B /* Main.storyboard */; };
 		23AAEDC81F9ED1130055702B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23AAEDC71F9ED1130055702B /* Assets.xcassets */; };
 		23AAEDCB1F9ED1130055702B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23AAEDC91F9ED1130055702B /* LaunchScreen.storyboard */; };
 		23AAEDD61F9ED1130055702B /* TODO_Part3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDD51F9ED1130055702B /* TODO_Part3Tests.swift */; };
 		23AAEDE11F9ED1130055702B /* TODO_Part3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDE01F9ED1130055702B /* TODO_Part3UITests.swift */; };
-		23D1C3EA1F9EEED700074FBE /* background in Resources */ = {isa = PBXBuildFile; fileRef = 23D1C3E81F9EEED600074FBE /* background */; };
-		23D1C3EB1F9EEED700074FBE /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 23D1C3E91F9EEED600074FBE /* logo.png */; };
+		8E110C5C1FA33E5A005A661C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E110C5A1FA33E59005A661C /* Main.storyboard */; };
+		8E1D85781FA2C74600284F3A /* HeaderBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85741FA2C74600284F3A /* HeaderBackground.png */; };
+		8E1D85791FA2C74600284F3A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85751FA2C74600284F3A /* background.png */; };
+		8E1D857A1FA2C74600284F3A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85761FA2C74600284F3A /* logo.png */; };
+		8E1D857B1FA2C74600284F3A /* AddButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85771FA2C74600284F3A /* AddButton.png */; };
+		8EBAFDE51FA2D49F00B8C40E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */; };
+		8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */; };
+		8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */; };
+		8EBAFE3A1FA2EA2700B8C40E /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFE371FA2EA2700B8C40E /* TextFieldEffects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,14 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		232841431F9F257F00E17477 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../TextFieldEffects-master/TextFieldEffects/TextFieldEffects/Info.plist"; sourceTree = "<group>"; };
-		232841451F9F257F00E17477 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldEffects.h; path = "../../TextFieldEffects-master/TextFieldEffects/TextFieldEffects/TextFieldEffects.h"; sourceTree = "<group>"; };
-		232841461F9F257F00E17477 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = "../../TextFieldEffects-master/TextFieldEffects/TextFieldEffects/HoshiTextField.swift"; sourceTree = "<group>"; };
-		232841541F9F285D00E17477 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldEffects.swift; path = "../../TextFieldEffects-master/TextFieldEffects/TextFieldEffects/TextFieldEffects.swift"; sourceTree = "<group>"; };
 		23AAEDBD1F9ED1120055702B /* TODO-Part3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TODO-Part3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23AAEDC01F9ED1120055702B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23AAEDC21F9ED1120055702B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		23AAEDC51F9ED1120055702B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23AAEDC71F9ED1130055702B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23AAEDCA1F9ED1130055702B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23AAEDCC1F9ED1130055702B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,8 +54,16 @@
 		23AAEDDC1F9ED1130055702B /* TODO-Part3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TODO-Part3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23AAEDE01F9ED1130055702B /* TODO_Part3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_Part3UITests.swift; sourceTree = "<group>"; };
 		23AAEDE21F9ED1130055702B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23D1C3E81F9EEED600074FBE /* background */ = {isa = PBXFileReference; lastKnownFileType = file; name = background; path = ../../../image/background; sourceTree = "<group>"; };
-		23D1C3E91F9EEED600074FBE /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../image/logo.png; sourceTree = "<group>"; };
+		8E110C5B1FA33E59005A661C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E1D85741FA2C74600284F3A /* HeaderBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderBackground.png; sourceTree = "<group>"; };
+		8E1D85751FA2C74600284F3A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		8E1D85761FA2C74600284F3A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		8E1D85771FA2C74600284F3A /* AddButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddButton.png; sourceTree = "<group>"; };
+		8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/HoshiTextField.swift; sourceTree = SOURCE_ROOT; };
+		8EBAFE371FA2EA2700B8C40E /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldEffects.swift; path = TextFieldEffects/TextFieldEffects.swift; sourceTree = SOURCE_ROOT; };
+		8EBAFE381FA2EA2700B8C40E /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldEffects.h; path = TextFieldEffects/TextFieldEffects.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,21 +91,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2328413C1F9F250B00E17477 /* TextFieldEffects */ = {
-			isa = PBXGroup;
-			children = (
-				232841541F9F285D00E17477 /* TextFieldEffects.swift */,
-				232841461F9F257F00E17477 /* HoshiTextField.swift */,
-				232841431F9F257F00E17477 /* Info.plist */,
-				232841451F9F257F00E17477 /* TextFieldEffects.h */,
-			);
-			path = TextFieldEffects;
-			sourceTree = "<group>";
-		};
 		23AAEDB41F9ED1120055702B = {
 			isa = PBXGroup;
 			children = (
-				2328413C1F9F250B00E17477 /* TextFieldEffects */,
+				8EBAFE351FA2EA0B00B8C40E /* TextFieldEffects */,
 				23AAEDBF1F9ED1120055702B /* TODO-Part3 */,
 				23AAEDD41F9ED1130055702B /* TODO-Part3Tests */,
 				23AAEDDF1F9ED1130055702B /* TODO-Part3UITests */,
@@ -120,10 +115,12 @@
 		23AAEDBF1F9ED1120055702B /* TODO-Part3 */ = {
 			isa = PBXGroup;
 			children = (
+				8E110C5A1FA33E59005A661C /* Main.storyboard */,
+				8EBAFDDF1FA2CF7E00B8C40E /* SignUp */,
+				8EBAFDDE1FA2CF7600B8C40E /* SignIn */,
 				23D1C3E71F9EEE9800074FBE /* Image */,
 				23AAEDC01F9ED1120055702B /* AppDelegate.swift */,
 				23AAEDC21F9ED1120055702B /* ViewController.swift */,
-				23AAEDC41F9ED1120055702B /* Main.storyboard */,
 				23AAEDC71F9ED1130055702B /* Assets.xcassets */,
 				23AAEDC91F9ED1130055702B /* LaunchScreen.storyboard */,
 				23AAEDCC1F9ED1130055702B /* Info.plist */,
@@ -152,10 +149,39 @@
 		23D1C3E71F9EEE9800074FBE /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				23D1C3E81F9EEED600074FBE /* background */,
-				23D1C3E91F9EEED600074FBE /* logo.png */,
+				8E1D85771FA2C74600284F3A /* AddButton.png */,
+				8E1D85751FA2C74600284F3A /* background.png */,
+				8E1D85741FA2C74600284F3A /* HeaderBackground.png */,
+				8E1D85761FA2C74600284F3A /* logo.png */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		8EBAFDDE1FA2CF7600B8C40E /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		8EBAFDDF1FA2CF7E00B8C40E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		8EBAFE351FA2EA0B00B8C40E /* TextFieldEffects */ = {
+			isa = PBXGroup;
+			children = (
+				8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */,
+				8EBAFE381FA2EA2700B8C40E /* TextFieldEffects.h */,
+				8EBAFE371FA2EA2700B8C40E /* TextFieldEffects.swift */,
+			);
+			name = TextFieldEffects;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,12 +291,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E110C5C1FA33E5A005A661C /* Main.storyboard in Resources */,
+				8E1D85781FA2C74600284F3A /* HeaderBackground.png in Resources */,
+				8E1D85791FA2C74600284F3A /* background.png in Resources */,
+				8E1D857A1FA2C74600284F3A /* logo.png in Resources */,
 				23AAEDCB1F9ED1130055702B /* LaunchScreen.storyboard in Resources */,
-				23D1C3EB1F9EEED700074FBE /* logo.png in Resources */,
-				2328414F1F9F257F00E17477 /* Info.plist in Resources */,
+				8E1D857B1FA2C74600284F3A /* AddButton.png in Resources */,
 				23AAEDC81F9ED1130055702B /* Assets.xcassets in Resources */,
-				23D1C3EA1F9EEED700074FBE /* background in Resources */,
-				23AAEDC61F9ED1120055702B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,9 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				23AAEDC31F9ED1120055702B /* ViewController.swift in Sources */,
+				8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */,
+				8EBAFE3A1FA2EA2700B8C40E /* TextFieldEffects.swift in Sources */,
 				23AAEDC11F9ED1120055702B /* AppDelegate.swift in Sources */,
-				232841551F9F285D00E17477 /* TextFieldEffects.swift in Sources */,
-				232841511F9F257F00E17477 /* HoshiTextField.swift in Sources */,
+				8EBAFDE51FA2D49F00B8C40E /* SignUpViewController.swift in Sources */,
+				8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,20 +363,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		23AAEDC41F9ED1120055702B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				23AAEDC51F9ED1120055702B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		23AAEDC91F9ED1130055702B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				23AAEDCA1F9ED1130055702B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8E110C5A1FA33E59005A661C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E110C5B1FA33E59005A661C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
