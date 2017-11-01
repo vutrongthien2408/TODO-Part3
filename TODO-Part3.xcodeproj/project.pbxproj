@@ -18,6 +18,13 @@
 		8E1D857A1FA2C74600284F3A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85761FA2C74600284F3A /* logo.png */; };
 		8E1D857B1FA2C74600284F3A /* AddButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85771FA2C74600284F3A /* AddButton.png */; };
 		8E7865DB1FA9A45300EF82DD /* BaseLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7865DA1FA9A45300EF82DD /* BaseLocalData.swift */; };
+		8E7865E01FA9B58A00EF82DD /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7865DD1FA9B58900EF82DD /* avatar.png */; };
+		8E7865E11FA9B58A00EF82DD /* homeBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7865DE1FA9B58A00EF82DD /* homeBackground.png */; };
+		8E7865E21FA9B58A00EF82DD /* dateBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7865DF1FA9B58A00EF82DD /* dateBackground.png */; };
+		8E7865E41FA9B85F00EF82DD /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7865E31FA9B85E00EF82DD /* icon-menu.png */; };
+		8E7865E71FA9BCAB00EF82DD /* notiBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7865E51FA9BCAB00EF82DD /* notiBackground.png */; };
+		8E7865EA1FA9BDA000EF82DD /* icon-disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7865E91FA9BDA000EF82DD /* icon-disclosure.png */; };
+		8E7865ED1FA9CA4900EF82DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7865EC1FA9CA4900EF82DD /* HomeViewController.swift */; };
 		8EBAFDE51FA2D49F00B8C40E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */; };
 		8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */; };
 		8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */; };
@@ -66,6 +73,13 @@
 		8E1D85761FA2C74600284F3A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		8E1D85771FA2C74600284F3A /* AddButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddButton.png; sourceTree = "<group>"; };
 		8E7865DA1FA9A45300EF82DD /* BaseLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLocalData.swift; sourceTree = "<group>"; };
+		8E7865DD1FA9B58900EF82DD /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		8E7865DE1FA9B58A00EF82DD /* homeBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeBackground.png; sourceTree = "<group>"; };
+		8E7865DF1FA9B58A00EF82DD /* dateBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dateBackground.png; sourceTree = "<group>"; };
+		8E7865E31FA9B85E00EF82DD /* icon-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu.png"; sourceTree = "<group>"; };
+		8E7865E51FA9BCAB00EF82DD /* notiBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notiBackground.png; sourceTree = "<group>"; };
+		8E7865E91FA9BDA000EF82DD /* icon-disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-disclosure.png"; sourceTree = "<group>"; };
+		8E7865EC1FA9CA4900EF82DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/HoshiTextField.swift; sourceTree = SOURCE_ROOT; };
@@ -129,9 +143,9 @@
 		23AAEDBF1F9ED1120055702B /* TODO-Part3 */ = {
 			isa = PBXGroup;
 			children = (
+				8E7865EB1FA9CA3300EF82DD /* Home */,
 				8ECD60541FA721C000133F5A /* AppDelegate.swift */,
 				8ECD60481FA720FA00133F5A /* CoreData */,
-				8ECD60451FA7205200133F5A /* Model */,
 				8E110C5A1FA33E59005A661C /* Main.storyboard */,
 				8EBAFDDF1FA2CF7E00B8C40E /* SignUp */,
 				8EBAFDDE1FA2CF7600B8C40E /* SignIn */,
@@ -140,7 +154,6 @@
 				23AAEDC71F9ED1130055702B /* Assets.xcassets */,
 				23AAEDC91F9ED1130055702B /* LaunchScreen.storyboard */,
 				23AAEDCC1F9ED1130055702B /* Info.plist */,
-				8E7865DA1FA9A45300EF82DD /* BaseLocalData.swift */,
 			);
 			path = "TODO-Part3";
 			sourceTree = "<group>";
@@ -166,12 +179,37 @@
 		23D1C3E71F9EEE9800074FBE /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				8E7865E91FA9BDA000EF82DD /* icon-disclosure.png */,
+				8E7865E51FA9BCAB00EF82DD /* notiBackground.png */,
+				8E7865E31FA9B85E00EF82DD /* icon-menu.png */,
+				8E7865DD1FA9B58900EF82DD /* avatar.png */,
+				8E7865DF1FA9B58A00EF82DD /* dateBackground.png */,
+				8E7865DE1FA9B58A00EF82DD /* homeBackground.png */,
 				8E1D85771FA2C74600284F3A /* AddButton.png */,
 				8E1D85751FA2C74600284F3A /* background.png */,
 				8E1D85741FA2C74600284F3A /* HeaderBackground.png */,
 				8E1D85761FA2C74600284F3A /* logo.png */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		8E7865DC1FA9AE5100EF82DD /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+				8ECD604C1FA7210F00133F5A /* AccountLocalDataImp.swift */,
+				8ECD604B1FA7210F00133F5A /* CoreDataProtocol.swift */,
+				8ECD60491FA7210F00133F5A /* TODO_Part3.xcdatamodeld */,
+				8E7865DA1FA9A45300EF82DD /* BaseLocalData.swift */,
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
+		8E7865EB1FA9CA3300EF82DD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8E7865EC1FA9CA4900EF82DD /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		8EBAFDDE1FA2CF7600B8C40E /* SignIn */ = {
@@ -214,9 +252,8 @@
 		8ECD60481FA720FA00133F5A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8ECD604C1FA7210F00133F5A /* AccountLocalDataImp.swift */,
-				8ECD604B1FA7210F00133F5A /* CoreDataProtocol.swift */,
-				8ECD60491FA7210F00133F5A /* TODO_Part3.xcdatamodeld */,
+				8E7865DC1FA9AE5100EF82DD /* LocalData */,
+				8ECD60451FA7205200133F5A /* Model */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -329,9 +366,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E110C5C1FA33E5A005A661C /* Main.storyboard in Resources */,
+				8E7865E21FA9B58A00EF82DD /* dateBackground.png in Resources */,
 				8E1D85781FA2C74600284F3A /* HeaderBackground.png in Resources */,
+				8E7865E41FA9B85F00EF82DD /* icon-menu.png in Resources */,
+				8E7865E11FA9B58A00EF82DD /* homeBackground.png in Resources */,
 				8E1D85791FA2C74600284F3A /* background.png in Resources */,
 				8E1D857A1FA2C74600284F3A /* logo.png in Resources */,
+				8E7865E71FA9BCAB00EF82DD /* notiBackground.png in Resources */,
+				8E7865EA1FA9BDA000EF82DD /* icon-disclosure.png in Resources */,
+				8E7865E01FA9B58A00EF82DD /* avatar.png in Resources */,
 				23AAEDCB1F9ED1130055702B /* LaunchScreen.storyboard in Resources */,
 				8E1D857B1FA2C74600284F3A /* AddButton.png in Resources */,
 				23AAEDC81F9ED1130055702B /* Assets.xcassets in Resources */,
@@ -364,6 +407,7 @@
 				8E7865DB1FA9A45300EF82DD /* BaseLocalData.swift in Sources */,
 				23AAEDC31F9ED1120055702B /* ViewController.swift in Sources */,
 				8ECD60521FA7217600133F5A /* SignUpPresenterImp.swift in Sources */,
+				8E7865ED1FA9CA4900EF82DD /* HomeViewController.swift in Sources */,
 				8ECD60531FA7217600133F5A /* SignUpContract.swift in Sources */,
 				8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */,
 				8EBAFE3A1FA2EA2700B8C40E /* TextFieldEffects.swift in Sources */,

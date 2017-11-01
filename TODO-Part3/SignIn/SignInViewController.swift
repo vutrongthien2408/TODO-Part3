@@ -14,10 +14,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtPassword: HoshiTextField!
     @IBOutlet weak var scrollView: UIScrollView!
     static let SignInToSignUpIdentifier = "SignInToSignUp"
+    static let SignInToHomeIdentifier = "SignInToHome"
     @IBAction func btnSignUp(_ sender: Any) {
-        performSegue(withIdentifier: SignInViewController.SignInToSignUpIdentifier, sender: nil)
+        dismiss(animated: true) {
+             self.performSegue(withIdentifier: SignInViewController.SignInToSignUpIdentifier, sender: nil)
+        }
     }
     @IBAction func btnSignIn(_ sender: Any) {
+        // if login success ==> go to home screen
+        performSegue(withIdentifier: SignInViewController.SignInToHomeIdentifier, sender: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

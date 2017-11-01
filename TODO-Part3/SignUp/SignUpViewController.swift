@@ -11,12 +11,15 @@ import UIKit
 class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
 
     static let SignUp = "Sign up"
+    let SignUpToHomeIdentifier = "SignUpToHome"
     var presenter: SignUpPresenter?
+    @IBOutlet weak var lbBirthday: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var txtUsername: HoshiTextField!
     @IBOutlet weak var txtEmail: HoshiTextField!
     @IBOutlet weak var txtPassword: HoshiTextField!
     @IBOutlet weak var txtBirthday: HoshiTextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBAction func cancleSignUp(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -41,10 +44,12 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
     
     func onInsertSuccess(username: String) {
         let alert =  UIAlertController(title: SignUpViewController.SignUp, message: "SignUp Success", preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: { _ -> Void in
+            self.performSegue(withIdentifier: self.SignUpToHomeIdentifier, sender: nil)
+        })
+
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
-        // change screen to login
     }
     
     func onInsertFail(err: String) {
@@ -68,6 +73,9 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
         }else if textField == txtPassword{
             y = 100
         }else if textField == txtBirthday{
+            txtBirthday.isHidden = true
+            datePicker.isHidden = false
+            lbBirthday.isHidden = false
             y = 200
         }
         let cg = CGPoint.init(x: 0, y: y)
@@ -77,11 +85,16 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if textField == txtBirthday {
             scrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
+            txtBirthday.isHidden = false
+            datePicker.isHidden = true
+            lbBirthday.isHidden = true
+            txtBirthday.text = getBirthdayFromDatePicker(date: datePicker.date)
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == txtBirthday {
+            txtBirthday.text =  getBirthdayFromDatePicker(date: datePicker.date)
             txtBirthday.resignFirstResponder()
             return true
         }else if textField == txtUsername {
@@ -93,10 +106,20 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
         }
         return false
     }
+    
+    func getBirthdayFromDatePicker(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: datePicker.date)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         changeKeyBoardType()
         presenter = SignUpPresenterImp(view: self)
+        datePicker.datePickerMode = .date
+        datePicker.isHidden = true
+        lbBirthday.isHidden = true
         // Do any additional setup after loading the view.
     }
     
