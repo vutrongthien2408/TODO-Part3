@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23AAEDC11F9ED1120055702B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDC01F9ED1120055702B /* AppDelegate.swift */; };
 		23AAEDC31F9ED1120055702B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDC21F9ED1120055702B /* ViewController.swift */; };
 		23AAEDC81F9ED1130055702B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23AAEDC71F9ED1130055702B /* Assets.xcassets */; };
 		23AAEDCB1F9ED1130055702B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23AAEDC91F9ED1130055702B /* LaunchScreen.storyboard */; };
@@ -18,10 +17,18 @@
 		8E1D85791FA2C74600284F3A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85751FA2C74600284F3A /* background.png */; };
 		8E1D857A1FA2C74600284F3A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85761FA2C74600284F3A /* logo.png */; };
 		8E1D857B1FA2C74600284F3A /* AddButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85771FA2C74600284F3A /* AddButton.png */; };
+		8E7865DB1FA9A45300EF82DD /* BaseLocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7865DA1FA9A45300EF82DD /* BaseLocalData.swift */; };
 		8EBAFDE51FA2D49F00B8C40E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */; };
 		8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */; };
 		8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */; };
 		8EBAFE3A1FA2EA2700B8C40E /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFE371FA2EA2700B8C40E /* TextFieldEffects.swift */; };
+		8ECD60471FA720D600133F5A /* TblAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD60461FA720D600133F5A /* TblAccount.swift */; };
+		8ECD604D1FA7210F00133F5A /* TODO_Part3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD60491FA7210F00133F5A /* TODO_Part3.xcdatamodeld */; };
+		8ECD604E1FA7210F00133F5A /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD604B1FA7210F00133F5A /* CoreDataProtocol.swift */; };
+		8ECD604F1FA7210F00133F5A /* AccountLocalDataImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD604C1FA7210F00133F5A /* AccountLocalDataImp.swift */; };
+		8ECD60521FA7217600133F5A /* SignUpPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD60501FA7217600133F5A /* SignUpPresenterImp.swift */; };
+		8ECD60531FA7217600133F5A /* SignUpContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD60511FA7217600133F5A /* SignUpContract.swift */; };
+		8ECD60551FA721C100133F5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD60541FA721C000133F5A /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		23AAEDBD1F9ED1120055702B /* TODO-Part3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TODO-Part3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		23AAEDC01F9ED1120055702B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23AAEDC21F9ED1120055702B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23AAEDC71F9ED1130055702B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23AAEDCA1F9ED1130055702B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,11 +65,19 @@
 		8E1D85751FA2C74600284F3A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		8E1D85761FA2C74600284F3A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		8E1D85771FA2C74600284F3A /* AddButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddButton.png; sourceTree = "<group>"; };
+		8E7865DA1FA9A45300EF82DD /* BaseLocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLocalData.swift; sourceTree = "<group>"; };
 		8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/HoshiTextField.swift; sourceTree = SOURCE_ROOT; };
 		8EBAFE371FA2EA2700B8C40E /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldEffects.swift; path = TextFieldEffects/TextFieldEffects.swift; sourceTree = SOURCE_ROOT; };
 		8EBAFE381FA2EA2700B8C40E /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldEffects.h; path = TextFieldEffects/TextFieldEffects.h; sourceTree = SOURCE_ROOT; };
+		8ECD60461FA720D600133F5A /* TblAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TblAccount.swift; sourceTree = "<group>"; };
+		8ECD604A1FA7210F00133F5A /* TODO-Part3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TODO-Part3.xcdatamodel"; sourceTree = "<group>"; };
+		8ECD604B1FA7210F00133F5A /* CoreDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
+		8ECD604C1FA7210F00133F5A /* AccountLocalDataImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLocalDataImp.swift; sourceTree = "<group>"; };
+		8ECD60501FA7217600133F5A /* SignUpPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPresenterImp.swift; sourceTree = "<group>"; };
+		8ECD60511FA7217600133F5A /* SignUpContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpContract.swift; sourceTree = "<group>"; };
+		8ECD60541FA721C000133F5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +129,18 @@
 		23AAEDBF1F9ED1120055702B /* TODO-Part3 */ = {
 			isa = PBXGroup;
 			children = (
+				8ECD60541FA721C000133F5A /* AppDelegate.swift */,
+				8ECD60481FA720FA00133F5A /* CoreData */,
+				8ECD60451FA7205200133F5A /* Model */,
 				8E110C5A1FA33E59005A661C /* Main.storyboard */,
 				8EBAFDDF1FA2CF7E00B8C40E /* SignUp */,
 				8EBAFDDE1FA2CF7600B8C40E /* SignIn */,
 				23D1C3E71F9EEE9800074FBE /* Image */,
-				23AAEDC01F9ED1120055702B /* AppDelegate.swift */,
 				23AAEDC21F9ED1120055702B /* ViewController.swift */,
 				23AAEDC71F9ED1130055702B /* Assets.xcassets */,
 				23AAEDC91F9ED1130055702B /* LaunchScreen.storyboard */,
 				23AAEDCC1F9ED1130055702B /* Info.plist */,
+				8E7865DA1FA9A45300EF82DD /* BaseLocalData.swift */,
 			);
 			path = "TODO-Part3";
 			sourceTree = "<group>";
@@ -168,6 +185,8 @@
 		8EBAFDDF1FA2CF7E00B8C40E /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				8ECD60511FA7217600133F5A /* SignUpContract.swift */,
+				8ECD60501FA7217600133F5A /* SignUpPresenterImp.swift */,
 				8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */,
 			);
 			path = SignUp;
@@ -182,6 +201,24 @@
 			);
 			name = TextFieldEffects;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8ECD60451FA7205200133F5A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8ECD60461FA720D600133F5A /* TblAccount.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8ECD60481FA720FA00133F5A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8ECD604C1FA7210F00133F5A /* AccountLocalDataImp.swift */,
+				8ECD604B1FA7210F00133F5A /* CoreDataProtocol.swift */,
+				8ECD60491FA7210F00133F5A /* TODO_Part3.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,12 +359,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ECD60551FA721C100133F5A /* AppDelegate.swift in Sources */,
+				8ECD604F1FA7210F00133F5A /* AccountLocalDataImp.swift in Sources */,
+				8E7865DB1FA9A45300EF82DD /* BaseLocalData.swift in Sources */,
 				23AAEDC31F9ED1120055702B /* ViewController.swift in Sources */,
+				8ECD60521FA7217600133F5A /* SignUpPresenterImp.swift in Sources */,
+				8ECD60531FA7217600133F5A /* SignUpContract.swift in Sources */,
 				8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */,
 				8EBAFE3A1FA2EA2700B8C40E /* TextFieldEffects.swift in Sources */,
-				23AAEDC11F9ED1120055702B /* AppDelegate.swift in Sources */,
+				8ECD604E1FA7210F00133F5A /* CoreDataProtocol.swift in Sources */,
 				8EBAFDE51FA2D49F00B8C40E /* SignUpViewController.swift in Sources */,
 				8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */,
+				8ECD604D1FA7210F00133F5A /* TODO_Part3.xcdatamodeld in Sources */,
+				8ECD60471FA720D600133F5A /* TblAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +663,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8ECD60491FA7210F00133F5A /* TODO_Part3.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8ECD604A1FA7210F00133F5A /* TODO-Part3.xcdatamodel */,
+			);
+			currentVersion = 8ECD604A1FA7210F00133F5A /* TODO-Part3.xcdatamodel */;
+			path = TODO_Part3.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 23AAEDB51F9ED1120055702B /* Project object */;
 }
