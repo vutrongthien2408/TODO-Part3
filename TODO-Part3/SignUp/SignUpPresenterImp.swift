@@ -11,7 +11,7 @@ import Foundation
 class SignUpPresenterImp: SignUpPresenter {
     
     private let data: AccountDataContract
-    private let view: SignUpView
+    weak private var view: SignUpView?
     
     init(view: SignUpView) {
         data = AccountLocalData()
@@ -22,12 +22,12 @@ class SignUpPresenterImp: SignUpPresenter {
         let account = Account(username: username, email: email, password: password, birthday: birthday)
         if data.checkAccountByName(username: username)
             || data.checkAccountByEmail(email: email) {
-            view.onInsertFail(err: SignUpResult.accountAlreadyExist.rawValue)
+            view?.onInsertFail(err: SignUpResult.accountAlreadyExist.rawValue)
         } else {
             if data.insertAccount(account: account) {
-                view.onInsertSuccess(username: username)
+                view?.onInsertSuccess(username: username)
             } else {
-                view.onInsertFail(err: SignUpResult.signUpfail.rawValue)
+                view?.onInsertFail(err: SignUpResult.signUpfail.rawValue)
             }
         }
     }

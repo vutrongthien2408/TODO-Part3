@@ -11,6 +11,7 @@ protocol AccountDataContract {
     func getAllAccount() -> [Account]?
     func checkAccountByName(username: String) -> Bool
     func checkAccountByEmail(email: String) -> Bool
+    func checkSignInAccount(username: String, password: String) -> Bool
     func insertAccount(account: Account) -> Bool
     func updateAccount(account: Account) -> Bool
     func deleteAccount(account: Account) -> Bool

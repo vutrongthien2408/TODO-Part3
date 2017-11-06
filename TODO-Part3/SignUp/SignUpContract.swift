@@ -18,7 +18,7 @@ protocol SignUpPresenter {
 /*
  View
  */
-protocol SignUpView {
+protocol SignUpView: class {
     func onInsertSuccess(username: String)
     func onInsertFail(err: String)
 }

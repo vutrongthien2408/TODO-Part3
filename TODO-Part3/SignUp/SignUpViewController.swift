@@ -87,7 +87,6 @@ class SignUpViewController: UIViewController {
             let birthday = birthday, !birthday.isEmpty {
             presenter?.checkSignUpAccount(username: username, email: email,
                                           password: password, birthday: birthday)
-            
         } else {
             let alert =  UIAlertController(title: signUpKey, message: SignUpResult.empty.rawValue,
                                            preferredStyle: UIAlertControllerStyle.alert)
@@ -110,6 +109,7 @@ extension SignUpViewController: SignUpView {
         )
         let cancelAction = UIAlertAction(title: ButtonTitle.ok.rawValue, style: .cancel) { (action) in
             self.presenter = nil
+            self.performSegue(withIdentifier: self.signUpToHomeIdentifier, sender: nil)
         }
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
