@@ -10,10 +10,34 @@ import Foundation
 import CoreData
 
 class AccountLocalData: BaseLocalData, AccountDataContract {
-  
+    
+    func checkSignInAccount(username: String, password: String) -> Bool {
+        if let managedObjet = managedObjet {
+            let entityDescription = NSEntityDescription.entity(
+                forEntityName: AccountContract.TableName.rawValue,
+                in: managedObjet
+            )
+            fetchRequest.entity = entityDescription
+            let predicate = "\(AccountContract.ColumnUsername.rawValue) == %@ AND \(AccountContract.ColumnPassword.rawValue) == %@"
+            fetchRequest.predicate = NSPredicate(format: predicate, username, password)
+        }
+        do {
+            let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
+            if let results = results, results.count > 0 {
+                return true
+            }
+        } catch {
+            return false
+        }
+        return false
+    }
+    
     func getAllAccount() -> [Account]? {
         if let managedObjet = managedObjet {
-            let entityDescription = NSEntityDescription.entity(forEntityName: AccountContract.TableName.rawValue, in: managedObjet)
+            let entityDescription = NSEntityDescription.entity(
+                forEntityName: AccountContract.TableName.rawValue,
+                in: managedObjet
+            )
             fetchRequest.entity = entityDescription
         }
         do {
@@ -40,9 +64,12 @@ class AccountLocalData: BaseLocalData, AccountDataContract {
     
     func checkAccountByName(username: String) -> Bool {
         if let managedObjet = managedObjet {
-            let entityDescription = NSEntityDescription.entity(forEntityName: AccountContract.TableName.rawValue, in: managedObjet)
+            let entityDescription = NSEntityDescription.entity(
+                forEntityName: AccountContract.TableName.rawValue,
+                in: managedObjet
+            )
             fetchRequest.entity = entityDescription
-            fetchRequest.predicate = NSPredicate(format: AccountContract.ColumnUsername.rawValue + " == %@", username)
+            fetchRequest.predicate = NSPredicate(format: "\(AccountContract.ColumnUsername.rawValue)  == %@", username)
         }
         do {
             let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
@@ -60,7 +87,7 @@ class AccountLocalData: BaseLocalData, AccountDataContract {
         if let managedObjet = managedObjet {
             let entityDescription = NSEntityDescription.entity(forEntityName: AccountContract.TableName.rawValue, in: managedObjet)
             fetchRequest.entity = entityDescription
-            fetchRequest.predicate = NSPredicate(format: AccountContract.ColumnEmail.rawValue + " == %@", email)
+            fetchRequest.predicate = NSPredicate(format: "\(AccountContract.ColumnEmail.rawValue) == %@", email)
         }
         do {
             let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
@@ -76,11 +103,14 @@ class AccountLocalData: BaseLocalData, AccountDataContract {
     func insertAccount(account: Account) -> Bool {
         let context = AppDelegate.managedObjectContext
         if let context = context {
-            let managedObject = NSEntityDescription.insertNewObject(forEntityName: AccountContract.TableName.rawValue, into: context)
-            managedObject.setValue(account.getUsername(), forKey: AccountContract.ColumnUsername.rawValue)
-            managedObject.setValue(account.getEmail(), forKey: AccountContract.ColumnEmail.rawValue)
-            managedObject.setValue(account.getPassword(), forKey: AccountContract.ColumnPassword.rawValue)
-            managedObject.setValue(account.getBirthday(), forKey: AccountContract.ColumnBirthday.rawValue)
+            let managedObject = NSEntityDescription.insertNewObject(
+                forEntityName: AccountContract.TableName.rawValue,
+                into: context
+            )
+            managedObject.setValue(account.username, forKey: AccountContract.ColumnUsername.rawValue)
+            managedObject.setValue(account.email, forKey: AccountContract.ColumnEmail.rawValue)
+            managedObject.setValue(account.password, forKey: AccountContract.ColumnPassword.rawValue)
+            managedObject.setValue(account.birthday, forKey: AccountContract.ColumnBirthday.rawValue)
         }
         do {
             try context?.save()
@@ -96,9 +126,12 @@ class AccountLocalData: BaseLocalData, AccountDataContract {
     
     func deleteAccount(account: Account) -> Bool {
         if let managedObjet = managedObjet {
-            let entityDescription = NSEntityDescription.entity(forEntityName: AccountContract.TableName.rawValue, in: managedObjet)
+            let entityDescription = NSEntityDescription.entity(
+                forEntityName: AccountContract.TableName.rawValue,
+                in: managedObjet
+            )
             fetchRequest.entity = entityDescription
-            fetchRequest.predicate = NSPredicate(format: AccountContract.ColumnUsername.rawValue + " == %@", account.getUsername())
+            fetchRequest.predicate = NSPredicate(format: "\(AccountContract.ColumnUsername.rawValue)  == %@", account.username)
         }
         do {
             let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil

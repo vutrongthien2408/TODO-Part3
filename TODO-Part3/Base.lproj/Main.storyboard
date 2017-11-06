@@ -12,7 +12,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" id="BYZ-38-t0r" customClass="SignInViewController" customModule="TODO_Part3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SignInViewController" customModule="TODO_Part3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +101,6 @@
                                         </state>
                                         <connections>
                                             <action selector="btnSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yzg-Jf-aVK"/>
-                                            <segue destination="41L-j8-SrU" kind="show" identifier="SignInToHome" id="sbH-Oi-imO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -119,6 +118,7 @@
                         <outlet property="scrollView" destination="JDH-cL-Ic8" id="n7o-oq-LRY"/>
                         <outlet property="txtPassword" destination="VXY-cY-K3f" id="XDs-9T-fAl"/>
                         <outlet property="txtUsername" destination="fL3-au-nHN" id="SDq-KS-D7q"/>
+                        <segue destination="41L-j8-SrU" kind="modal" identifier="SignInToHome" modalTransitionStyle="partialCurl" id="2YQ-kq-qfF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -376,6 +376,7 @@
                         <viewLayoutGuide key="safeArea" id="Eup-FQ-QWr"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6yD-h6-Hcp"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0G-LR-FPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,6 +397,6 @@
         <image name="notiBackground.png" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sbH-Oi-imO"/>
+        <segue reference="2YQ-kq-qfF"/>
     </inferredMetricsTieBreakers>
 </document>

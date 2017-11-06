@@ -8,10 +8,17 @@
 
 import UIKit
 
+enum SignInResult: String {
+    case signInSuccess = "SignIn success"
+    case signInFail = "Username or password not available"
+}
+
 class SignInViewController: UIViewController {
 
     private let signInToSignUpIdentifier = "SignInToSignUp"
     private let signInToHomeIdentifier = "SignInToHome"
+    private let signInKey = "SignIn"
+    private var presenter: SignInPresenter?
     
     @IBOutlet weak var txtUsername: HoshiTextField!
     @IBOutlet weak var txtPassword: HoshiTextField!
@@ -20,14 +27,13 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldSetKeyBoardType()
-        // Do any additional setup after loading the view.
+        presenter = SignInPresenterIpm(view: self)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-  
+    
     @IBAction func btnSignUp(_ sender: Any) {
         dismiss(animated: true) {
             self.performSegue(withIdentifier: self.signInToSignUpIdentifier, sender: nil)
@@ -36,9 +42,27 @@ class SignInViewController: UIViewController {
     
     @IBAction func btnSignIn(_ sender: Any) {
         // if login success ==> go to home screen
-        performSegue(withIdentifier: signInToHomeIdentifier, sender: nil)
+        let username = txtUsername.text
+        let password = txtPassword.text
+        if let username = username, let password = password {
+            presenter?.checkSignInAccount(username: username, password: password)
+        }
+    }
+}
+
+extension SignInViewController: SignInView {
+    
+    func onSignInSuccess(username: String) {
+        presenter = nil
+        self.performSegue(withIdentifier: self.signInToHomeIdentifier, sender: nil)
     }
 
+    func onSignInFail(err: String) {
+        let alert =  UIAlertController(title: signInKey, message: err, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: ButtonTitle.again.rawValue, style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension SignInViewController: UITextFieldDelegate {
