@@ -8,21 +8,20 @@
 
 import Foundation
 import CoreData
+
 class AccountLocalData: BaseLocalData, AccountDataContract {
-    
-    func getAllAccount() -> [Account] {
-        var accounts = [Account]()
+  
+    func getAllAccount() -> [Account]? {
         if let managedObjet = managedObjet {
             let entityDescription = NSEntityDescription.entity(forEntityName: AccountContract.TableName.rawValue, in: managedObjet)
             fetchRequest.entity = entityDescription
         }
-        
         do {
-            let result = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
-            let n = result?.count ?? 0
-            if (n > 0) {
-                for i in 0...n-1 {
-                    let account = result?[i] as? NSManagedObject
+            let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
+            if let results = results, results.count > 0 {
+                var accounts = [Account]()
+                for result in results{
+                    let account = result as? NSManagedObject
                     let username = account?.value(forKey: AccountContract.ColumnUsername.rawValue) as? String
                     let email = account?.value(forKey: AccountContract.ColumnEmail.rawValue) as? String
                     let password = account?.value(forKey: AccountContract.ColumnPassword.rawValue) as? String
@@ -31,31 +30,26 @@ class AccountLocalData: BaseLocalData, AccountDataContract {
                         accounts.append(Account(username: username, email: email, password: password, birthday: birthday))
                     }
                 }
+                return accounts
             }
         } catch {
-            let fetchError = error as NSError
-            print(fetchError)
+            return nil
         }
-        return accounts
+        return nil
     }
     
     func checkAccountByName(username: String) -> Bool {
         if let managedObjet = managedObjet {
             let entityDescription = NSEntityDescription.entity(forEntityName: AccountContract.TableName.rawValue, in: managedObjet)
             fetchRequest.entity = entityDescription
+            fetchRequest.predicate = NSPredicate(format: AccountContract.ColumnUsername.rawValue + " == %@", username)
         }
         do {
-            let result = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
-            let n = result?.count ?? 0
-            if (n > 0) {
-                for i in 0...n-1 {
-                    let account = result?[i] as? NSManagedObject
-                    let name = account?.value(forKey: AccountContract.ColumnUsername.rawValue) as? String
-                    if name == username {
-                        return true
-                    }
-                }
+            let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
+            if let results = results, results.count > 0 {
+                return true
             }
+            
         } catch {
             return false
         }
@@ -63,22 +57,15 @@ class AccountLocalData: BaseLocalData, AccountDataContract {
     }
     
     func checkAccountByEmail(email: String) -> Bool {
-        
         if let managedObjet = managedObjet {
             let entityDescription = NSEntityDescription.entity(forEntityName: AccountContract.TableName.rawValue, in: managedObjet)
             fetchRequest.entity = entityDescription
+            fetchRequest.predicate = NSPredicate(format: AccountContract.ColumnEmail.rawValue + " == %@", email)
         }
         do {
-            let result = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
-            let n = result?.count ?? 0
-            if (n > 0) {
-                for i in 0...n-1 {
-                    let account = result?[i] as? NSManagedObject
-                    let emailChecked =  account?.value(forKey: AccountContract.ColumnUsername.rawValue) as? String
-                    if emailChecked == email {
-                        return true
-                    }
-                }
+            let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
+            if let results = results, results.count > 0 {
+                return true
             }
         } catch {
             return false
@@ -95,7 +82,6 @@ class AccountLocalData: BaseLocalData, AccountDataContract {
             managedObject.setValue(account.getPassword(), forKey: AccountContract.ColumnPassword.rawValue)
             managedObject.setValue(account.getBirthday(), forKey: AccountContract.ColumnBirthday.rawValue)
         }
-       
         do {
             try context?.save()
             return true
@@ -109,25 +95,18 @@ class AccountLocalData: BaseLocalData, AccountDataContract {
     }
     
     func deleteAccount(account: Account) -> Bool {
-        
         if let managedObjet = managedObjet {
             let entityDescription = NSEntityDescription.entity(forEntityName: AccountContract.TableName.rawValue, in: managedObjet)
             fetchRequest.entity = entityDescription
+            fetchRequest.predicate = NSPredicate(format: AccountContract.ColumnUsername.rawValue + " == %@", account.getUsername())
         }
         do {
-            let result = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
-            let n = result?.count ?? 0
-            if (n > 0) {
-                for i in 0...n-1 {
-                    let accountDel = result?[i] as? NSManagedObject
-                    if let accountDel = accountDel{
-                        let name = accountDel.value(forKey: AccountContract.ColumnUsername.rawValue) as? String
-                        if name == account.getUsername(){
-                            AppDelegate.managedObjectContext?.delete(accountDel)
-                            try AppDelegate.managedObjectContext?.save()
-                        }
-                    }
-                }
+            let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
+            if let results = results, results.count > 0,
+                let accountDel = results.first as? NSManagedObject {
+                    AppDelegate.managedObjectContext?.delete(accountDel)
+                    try AppDelegate.managedObjectContext?.save()
+                    return true
             }
         } catch {
             return false

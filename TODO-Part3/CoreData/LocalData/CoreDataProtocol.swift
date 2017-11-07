@@ -8,7 +8,7 @@
 
 import Foundation
 protocol AccountDataContract {
-    func getAllAccount() -> [Account] 
+    func getAllAccount() -> [Account]?
     func checkAccountByName(username: String) -> Bool
     func checkAccountByEmail(email: String) -> Bool
     func insertAccount(account: Account) -> Bool

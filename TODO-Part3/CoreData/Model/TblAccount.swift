@@ -8,11 +8,13 @@
 
 import Foundation
 import CoreData
+
 class Account {
-    private var username: String
-    private var email: String
-    private var password: String
-    private var birthday: String
+    
+    var username: String
+    var email: String
+    var password: String
+    var birthday: String
 
     init(username: String, email: String, password: String, birthday: String) {
         self.username = username
@@ -21,18 +23,6 @@ class Account {
         self.birthday = birthday
     }
 
-    func getUsername() -> String {
-        return username
-    }
-    func getPassword() -> String {
-        return password
-    }
-    func getEmail() -> String {
-        return email
-    }
-    func getBirthday() -> String {
-        return birthday
-    }
 }
 
 enum AccountContract: String {

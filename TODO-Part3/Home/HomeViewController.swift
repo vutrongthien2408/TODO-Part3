@@ -10,18 +10,21 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    func prepareSwips(){
+    func prepareSwips() {
         let swipfromBottom = UISwipeGestureRecognizer(target: self, action: #selector (self.bottomSwiping(gesture:)))
         swipfromBottom.direction = .up
         view.addGestureRecognizer(swipfromBottom)
     }
     
-    @objc func bottomSwiping(gesture:UIGestureRecognizer){
+    @objc func bottomSwiping(gesture:UIGestureRecognizer) {
        // swipgesture to change screen
     }
+    
     @IBAction func navIconMenu(_ sender: Any) {
         // show navigation menu
+        dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareSwips()
