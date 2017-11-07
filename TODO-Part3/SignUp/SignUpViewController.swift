@@ -8,11 +8,39 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
+enum TextFieldBottomPadding: Int {
+    case email = 50
+    case username = 150
+    case password = 100
+    case birthday = 200
+}
 
-    static let SignUp = "Sign up"
-    let SignUpToHomeIdentifier = "SignUpToHome"
-    var presenter: SignUpPresenter?
+enum SignUpResult: String {
+    case empty = "Not data"
+    case signUpfail = "SignUp fail"
+    case accountAlreadyExist = "Username or email is already exists"
+    case signUpSuccess = "SignUp success"
+}
+
+enum ButtonTitle: String {
+    case ok = "Ok"
+    case cancle = "Cancle"
+    case again = "Again"
+}
+
+enum DateFormatStyle: String {
+    case styleOne = "dd/MM/yyyy"
+    case styleTwo = "MM/dd/yyyy"
+    case styleThree = "dd/MM/yy"
+    case styleFour = "MM/dd/yy"
+}
+
+class SignUpViewController: UIViewController {
+
+    private let signUpKey = "Sign up"
+    private let signUpToHomeIdentifier = "SignUpToHome"
+    private var presenter: SignUpPresenter?
+    
     @IBOutlet weak var lbBirthday: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var txtUsername: HoshiTextField!
@@ -20,44 +48,87 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
     @IBOutlet weak var txtPassword: HoshiTextField!
     @IBOutlet weak var txtBirthday: HoshiTextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        changeKeyBoardType()
+        presenter = SignUpPresenterImp(view: self)
+        datePicker.datePickerMode = .date
+        datePicker.isHidden = true
+        lbBirthday.isHidden = true
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func getBirthdayFromDatePicker(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = DateFormatStyle.styleOne.rawValue
+        return dateFormatter.string(from: datePicker.date)
+    }
+    
     @IBAction func cancleSignUp(_ sender: Any) {
+        presenter = nil
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func btnSignUp(_ sender: Any) {
         let username = txtUsername.text
         let email = txtEmail.text
         let password = txtPassword.text
         let birthday = txtBirthday.text
-        if let username = username, let email = email, let password = password, let birthday = birthday  {
-            if (username == "") || email == "" || password == "" || birthday == "" {
-                let alert =  UIAlertController(title: SignUpViewController.SignUp, message: "not data", preferredStyle: UIAlertControllerStyle.alert)
-                let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(cancelAction)
-                self.present(alert, animated: true, completion: nil)
-            }else{
-                presenter?.checkSignUpAccount(username: username, email: email, password: password, birthday: birthday)
-            }
-        }else {
-            return
+        if let username = username, !username.isEmpty,
+            let email = email, !email.isEmpty,
+            let password = password, !password.isEmpty,
+            let birthday = birthday, !birthday.isEmpty {
+            presenter?.checkSignUpAccount(username: username, email: email,
+                                          password: password, birthday: birthday)
+            
+        } else {
+            let alert =  UIAlertController(title: signUpKey, message: SignUpResult.empty.rawValue,
+                                           preferredStyle: UIAlertControllerStyle.alert)
+            let cancelAction = UIAlertAction(title: ButtonTitle.again.rawValue,
+                                             style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            present(alert, animated: true, completion: nil)
         }
     }
     
-    func onInsertSuccess(username: String) {
-        let alert =  UIAlertController(title: SignUpViewController.SignUp, message: "SignUp Success", preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: { _ -> Void in
-            self.performSegue(withIdentifier: self.SignUpToHomeIdentifier, sender: nil)
-        })
+}
 
+extension SignUpViewController: SignUpView {
+    
+    func onInsertSuccess(username: String) {
+        let alert =  UIAlertController(
+            title: signUpKey,
+            message: SignUpResult.signUpSuccess.rawValue,
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+        let cancelAction = UIAlertAction(title: ButtonTitle.ok.rawValue, style: .cancel) { (action) in
+            self.presenter = nil
+        }
         alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func onInsertFail(err: String) {
-        let alert =  UIAlertController(title: SignUpViewController.SignUp, message: err, preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "Again", style: .cancel, handler: nil)
+        let alert =  UIAlertController(
+            title: signUpKey,
+            message: err,
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+        let cancelAction = UIAlertAction(title: ButtonTitle.again.rawValue, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
+    
+}
+
+extension SignUpViewController: UITextFieldDelegate {
     
     func changeKeyBoardType() {
         txtUsername.returnKeyType = UIReturnKeyType.next
@@ -67,18 +138,18 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        var y = 0
+        var bottompadding = 0
         if textField == txtEmail {
-            y = 50
-        }else if textField == txtPassword{
-            y = 100
-        }else if textField == txtBirthday{
+            bottompadding = TextFieldBottomPadding.email.rawValue
+        } else if textField == txtPassword {
+            bottompadding = TextFieldBottomPadding.password.rawValue
+        } else if textField == txtBirthday {
             txtBirthday.isHidden = true
             datePicker.isHidden = false
             lbBirthday.isHidden = false
-            y = 200
+            bottompadding = TextFieldBottomPadding.birthday.rawValue
         }
-        let cg = CGPoint.init(x: 0, y: y)
+        let cg = CGPoint(x: 0, y: bottompadding)
         scrollView.setContentOffset(cg, animated: true)
     }
     
@@ -97,36 +168,13 @@ class SignUpViewController: UIViewController,UITextFieldDelegate,SignUpView{
             txtBirthday.text =  getBirthdayFromDatePicker(date: datePicker.date)
             txtBirthday.resignFirstResponder()
             return true
-        }else if textField == txtUsername {
+        } else if textField == txtUsername {
             txtEmail.becomeFirstResponder()
-        }else if textField == txtEmail {
+        } else if textField == txtEmail {
             txtPassword.becomeFirstResponder()
-        }else {
+        } else {
             txtBirthday.becomeFirstResponder()
         }
         return false
     }
-    
-    func getBirthdayFromDatePicker(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        return dateFormatter.string(from: datePicker.date)
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        changeKeyBoardType()
-        presenter = SignUpPresenterImp(view: self)
-        datePicker.datePickerMode = .date
-        datePicker.isHidden = true
-        lbBirthday.isHidden = true
-        // Do any additional setup after loading the view.
-    }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

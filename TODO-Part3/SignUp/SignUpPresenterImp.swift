@@ -7,26 +7,27 @@
 //
 
 import Foundation
+
 class SignUpPresenterImp: SignUpPresenter {
     
-    let data: AccountDataContract
-    let view: SignUpView
+    private let data: AccountDataContract
+    private let view: SignUpView
     
     init(view: SignUpView) {
         data = AccountLocalData()
         self.view = view
     }
+    
     func checkSignUpAccount(username: String, email: String, password: String, birthday: String) {
         let account = Account(username: username, email: email, password: password, birthday: birthday)
-        if data.checkAccountByName(username: username) || data.checkAccountByEmail(email: email){
-            view.onInsertFail(err: username + " or " + email + " already exists")
-            return
-        }else {
-            if data.insertAccount(account: account){
+        if data.checkAccountByName(username: username)
+            || data.checkAccountByEmail(email: email) {
+            view.onInsertFail(err: SignUpResult.accountAlreadyExist.rawValue)
+        } else {
+            if data.insertAccount(account: account) {
                 view.onInsertSuccess(username: username)
-                return
-            }else{
-                view.onInsertFail(err: "Insert err")
+            } else {
+                view.onInsertFail(err: SignUpResult.signUpfail.rawValue)
             }
         }
     }
