@@ -35,6 +35,8 @@
 		8E7865ED1FA9CA4900EF82DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7865EC1FA9CA4900EF82DD /* HomeViewController.swift */; };
 		8E7F514B1FB0602800ABD7DD /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F51491FB0602700ABD7DD /* SignInContract.swift */; };
 		8E7F514C1FB0602800ABD7DD /* SignInPresenterIpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7F514A1FB0602700ABD7DD /* SignInPresenterIpm.swift */; };
+		8EBA95091FB5416900674EB3 /* TblStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA95081FB5416900674EB3 /* TblStatus.swift */; };
+		8EBA950D1FB5455300674EB3 /* StatusLocalDataImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA950C1FB5455300674EB3 /* StatusLocalDataImp.swift */; };
 		8EBAFDE51FA2D49F00B8C40E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */; };
 		8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */; };
 		8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */; };
@@ -100,6 +102,8 @@
 		8E7865EC1FA9CA4900EF82DD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8E7F51491FB0602700ABD7DD /* SignInContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
 		8E7F514A1FB0602700ABD7DD /* SignInPresenterIpm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInPresenterIpm.swift; sourceTree = "<group>"; };
+		8EBA95081FB5416900674EB3 /* TblStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TblStatus.swift; sourceTree = "<group>"; };
+		8EBA950C1FB5455300674EB3 /* StatusLocalDataImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusLocalDataImp.swift; sourceTree = "<group>"; };
 		8EBAFDE41FA2D49F00B8C40E /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/HoshiTextField.swift; sourceTree = SOURCE_ROOT; };
@@ -236,6 +240,7 @@
 				8ECD604B1FA7210F00133F5A /* CoreDataProtocol.swift */,
 				8ECD60491FA7210F00133F5A /* TODO_Part3.xcdatamodeld */,
 				8E7865DA1FA9A45300EF82DD /* BaseLocalData.swift */,
+				8EBA950C1FB5455300674EB3 /* StatusLocalDataImp.swift */,
 			);
 			path = LocalData;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				8ECD60461FA720D600133F5A /* TblAccount.swift */,
+				8EBA95081FB5416900674EB3 /* TblStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -459,6 +465,8 @@
 				8E7F514C1FB0602800ABD7DD /* SignInPresenterIpm.swift in Sources */,
 				8EBAFE3A1FA2EA2700B8C40E /* TextFieldEffects.swift in Sources */,
 				8ECD604E1FA7210F00133F5A /* CoreDataProtocol.swift in Sources */,
+				8EBA95091FB5416900674EB3 /* TblStatus.swift in Sources */,
+				8EBA950D1FB5455300674EB3 /* StatusLocalDataImp.swift in Sources */,
 				8EBAFDE51FA2D49F00B8C40E /* SignUpViewController.swift in Sources */,
 				8E1274951FB407C900D71CEC /* GroupsViewController.swift in Sources */,
 				8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */,
