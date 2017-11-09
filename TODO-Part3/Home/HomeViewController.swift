@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    private let homeToGroupsIdentifier = "HomeToGroups"
+    
     func prepareSwips() {
         let swipfromBottom = UISwipeGestureRecognizer(target: self, action: #selector (self.bottomSwiping(gesture:)))
         swipfromBottom.direction = .up
@@ -18,11 +20,7 @@ class HomeViewController: UIViewController {
     
     @objc func bottomSwiping(gesture:UIGestureRecognizer) {
        // swipgesture to change screen
-    }
-    
-    @IBAction func navIconMenu(_ sender: Any) {
-        // show navigation menu
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: homeToGroupsIdentifier, sender: nil)
     }
     
     override func viewDidLoad() {
