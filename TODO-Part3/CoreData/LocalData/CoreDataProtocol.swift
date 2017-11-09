@@ -16,3 +16,11 @@ protocol AccountDataContract {
     func updateAccount(account: Account) -> Bool
     func deleteAccount(account: Account) -> Bool
 }
+
+protocol StatusDataContract {
+    func getStatusByAccount(accountName: String) -> [Status]?
+    func getStatusByCategory(categoryName: String) -> [Status]?
+    func insertStatus(status: Status) -> Bool
+    func updateStatus(status: Status) -> Bool
+    func deleteStatus(status: Status) -> Bool
+}
