@@ -23,14 +23,19 @@ class StatusLocalDataImp: BaseLocalData, StatusDataContract {
         return loadStatus(fetchRequest: fetchRequest)
     }
     
-    func getStatusByCategory(categoryName: String) -> [Status]? {
+    func getStatusByCategoryAndAccount(categoryName: String, accountName: String) -> [Status]? {
+      
         if let managedObjet = managedObjet {
             let entityDescription = NSEntityDescription.entity(
                 forEntityName: Status.TableName,
                 in: managedObjet
             )
             fetchRequest.entity = entityDescription
-            fetchRequest.predicate = NSPredicate(format: "\(Status.ColumnCategoryName)  == %@", categoryName)
+            fetchRequest.predicate = NSPredicate(
+                format: "\(Status.ColumnCategoryName)  == %@ AND \(Status.ColumnAccountName) == %@",
+                categoryName,
+                accountName
+            )
         }
         return loadStatus(fetchRequest: fetchRequest)
     }
@@ -40,27 +45,31 @@ class StatusLocalDataImp: BaseLocalData, StatusDataContract {
             let results = try AppDelegate.managedObjectContext?.fetch(fetchRequest) ?? nil
             if let results = results, results.count > 0 {
                 var statuses = [Status]()
-                for result in results{
+                for result in results {
                     let status = result as? NSManagedObject
                     let accountName = status?.value(forKey: Status.ColumnAccountName) as? String
                     let categoryName = status?.value(forKey: Status.ColumnCategoryName) as? String
                     let title = status?.value(forKey: Status.ColumnTitle) as? String
                     let description = status?.value(forKey: Status.ColumnDescriptions) as? String
                     let time = status?.value(forKey: Status.ColumnTime) as? String
+                    let location = status?.value(forKey: Status.ColumnLocation) as? String
                     if let accountName = accountName,
                         let categoryName = categoryName,
                         let description = description,
                         let title = title,
-                        let time = time {
+                        let time = time,
+                        let location = location {
                         statuses.append(
                             Status(accountName: accountName,
                                    categoryName: categoryName,
                                    title: title,
                                    descriptions: description,
-                                   time: time
+                                   time: time,
+                                   location: location
                             )
                         )
                     }
+                   
                 }
                 return statuses
             }
@@ -82,6 +91,7 @@ class StatusLocalDataImp: BaseLocalData, StatusDataContract {
             managedObject.setValue(status.title, forKey: Status.ColumnTitle)
             managedObject.setValue(status.descriptions, forKey: Status.ColumnDescriptions)
             managedObject.setValue(status.time, forKey: Status.ColumnTime)
+            managedObject.setValue(status.location, forKey: Status.ColumnLocation)
         }
         do {
             try context?.save()

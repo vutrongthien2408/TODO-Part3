@@ -12,6 +12,10 @@
 		23AAEDCB1F9ED1130055702B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23AAEDC91F9ED1130055702B /* LaunchScreen.storyboard */; };
 		23AAEDD61F9ED1130055702B /* TODO_Part3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDD51F9ED1130055702B /* TODO_Part3Tests.swift */; };
 		23AAEDE11F9ED1130055702B /* TODO_Part3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AAEDE01F9ED1130055702B /* TODO_Part3UITests.swift */; };
+		8E01C7831FBC15A6001534D9 /* CreateStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01C7821FBC15A6001534D9 /* CreateStatusProtocol.swift */; };
+		8E01C7851FBC169D001534D9 /* CreateStatusPresenterIpm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01C7841FBC169D001534D9 /* CreateStatusPresenterIpm.swift */; };
+		8E01C7871FBC1CA3001534D9 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01C7861FBC1CA3001534D9 /* ListViewController.swift */; };
+		8E01C78C1FBC20FF001534D9 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01C78B1FBC20FF001534D9 /* ListPresenter.swift */; };
 		8E022F411FB3F93200CDE9EF /* navibackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E022F3A1FB3F92F00CDE9EF /* navibackground.png */; };
 		8E022F421FB3F93200CDE9EF /* work.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E022F3B1FB3F93000CDE9EF /* work.png */; };
 		8E022F431FB3F93200CDE9EF /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E022F3C1FB3F93000CDE9EF /* close.png */; };
@@ -20,6 +24,7 @@
 		8E022F461FB3F93200CDE9EF /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E022F3F1FB3F93100CDE9EF /* logout.png */; };
 		8E022F471FB3F93200CDE9EF /* vacation.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E022F401FB3F93200CDE9EF /* vacation.png */; };
 		8E110C5C1FA33E5A005A661C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E110C5A1FA33E59005A661C /* Main.storyboard */; };
+		8E14FB221FBD24E800DBFEFF /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E14FB211FBD24E800DBFEFF /* StatusCell.swift */; };
 		8E1D85781FA2C74600284F3A /* HeaderBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85741FA2C74600284F3A /* HeaderBackground.png */; };
 		8E1D85791FA2C74600284F3A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85751FA2C74600284F3A /* background.png */; };
 		8E1D857A1FA2C74600284F3A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1D85761FA2C74600284F3A /* logo.png */; };
@@ -45,6 +50,7 @@
 		8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFDE61FA2D4A700B8C40E /* SignInViewController.swift */; };
 		8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */; };
 		8EBAFE3A1FA2EA2700B8C40E /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBAFE371FA2EA2700B8C40E /* TextFieldEffects.swift */; };
+		8EBF80CF1FBAF9840016959E /* CreateContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF80CE1FBAF9840016959E /* CreateContainerViewController.swift */; };
 		8ECD60471FA720D600133F5A /* TblAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD60461FA720D600133F5A /* TblAccount.swift */; };
 		8ECD604D1FA7210F00133F5A /* TODO_Part3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD60491FA7210F00133F5A /* TODO_Part3.xcdatamodeld */; };
 		8ECD604E1FA7210F00133F5A /* CoreDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD604B1FA7210F00133F5A /* CoreDataProtocol.swift */; };
@@ -83,6 +89,10 @@
 		23AAEDDC1F9ED1130055702B /* TODO-Part3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TODO-Part3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23AAEDE01F9ED1130055702B /* TODO_Part3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_Part3UITests.swift; sourceTree = "<group>"; };
 		23AAEDE21F9ED1130055702B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E01C7821FBC15A6001534D9 /* CreateStatusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStatusProtocol.swift; sourceTree = "<group>"; };
+		8E01C7841FBC169D001534D9 /* CreateStatusPresenterIpm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStatusPresenterIpm.swift; sourceTree = "<group>"; };
+		8E01C7861FBC1CA3001534D9 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		8E01C78B1FBC20FF001534D9 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		8E022F3A1FB3F92F00CDE9EF /* navibackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navibackground.png; sourceTree = "<group>"; };
 		8E022F3B1FB3F93000CDE9EF /* work.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = work.png; sourceTree = "<group>"; };
 		8E022F3C1FB3F93000CDE9EF /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
@@ -91,6 +101,7 @@
 		8E022F3F1FB3F93100CDE9EF /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		8E022F401FB3F93200CDE9EF /* vacation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vacation.png; sourceTree = "<group>"; };
 		8E110C5B1FA33E59005A661C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E14FB211FBD24E800DBFEFF /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		8E1D85741FA2C74600284F3A /* HeaderBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderBackground.png; sourceTree = "<group>"; };
 		8E1D85751FA2C74600284F3A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		8E1D85761FA2C74600284F3A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -117,6 +128,7 @@
 		8EBAFE361FA2EA2700B8C40E /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoshiTextField.swift; path = TextFieldEffects/HoshiTextField.swift; sourceTree = SOURCE_ROOT; };
 		8EBAFE371FA2EA2700B8C40E /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldEffects.swift; path = TextFieldEffects/TextFieldEffects.swift; sourceTree = SOURCE_ROOT; };
 		8EBAFE381FA2EA2700B8C40E /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFieldEffects.h; path = TextFieldEffects/TextFieldEffects.h; sourceTree = SOURCE_ROOT; };
+		8EBF80CE1FBAF9840016959E /* CreateContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContainerViewController.swift; sourceTree = "<group>"; };
 		8ECD60461FA720D600133F5A /* TblAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TblAccount.swift; sourceTree = "<group>"; };
 		8ECD604A1FA7210F00133F5A /* TODO-Part3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TODO-Part3.xcdatamodel"; sourceTree = "<group>"; };
 		8ECD604B1FA7210F00133F5A /* CoreDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProtocol.swift; sourceTree = "<group>"; };
@@ -175,6 +187,7 @@
 		23AAEDBF1F9ED1120055702B /* TODO-Part3 */ = {
 			isa = PBXGroup;
 			children = (
+				8E01C7881FBC1CC7001534D9 /* List */,
 				8E4054D51FB9350F00803F89 /* Status */,
 				8E1274931FB407B600D71CEC /* Groups */,
 				8E7865EB1FA9CA3300EF82DD /* Home */,
@@ -234,6 +247,40 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		8E01C7811FBBFC59001534D9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8E01C7841FBC169D001534D9 /* CreateStatusPresenterIpm.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8E01C7881FBC1CC7001534D9 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				8E01C78A1FBC20DC001534D9 /* Presenter */,
+				8E01C7891FBC20D7001534D9 /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		8E01C7891FBC20D7001534D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E01C7861FBC1CA3001534D9 /* ListViewController.swift */,
+				8E14FB211FBD24E800DBFEFF /* StatusCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8E01C78A1FBC20DC001534D9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8E01C78B1FBC20FF001534D9 /* ListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		8E1274931FB407B600D71CEC /* Groups */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,7 +294,9 @@
 		8E4054D51FB9350F00803F89 /* Status */ = {
 			isa = PBXGroup;
 			children = (
+				8E01C7811FBBFC59001534D9 /* Presenter */,
 				8E6868651FBA997A00AC2F55 /* View */,
+				8E01C7821FBC15A6001534D9 /* CreateStatusProtocol.swift */,
 			);
 			path = Status;
 			sourceTree = "<group>";
@@ -273,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				8E4054D61FB9352E00803F89 /* CreateStatusViewController.swift */,
+				8EBF80CE1FBAF9840016959E /* CreateContainerViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -505,14 +555,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E01C7871FBC1CA3001534D9 /* ListViewController.swift in Sources */,
 				8ECD60551FA721C100133F5A /* AppDelegate.swift in Sources */,
 				8E4054E21FB99EEC00803F89 /* CategoryPresenter.swift in Sources */,
 				8ECD604F1FA7210F00133F5A /* AccountLocalDataImp.swift in Sources */,
+				8E01C7851FBC169D001534D9 /* CreateStatusPresenterIpm.swift in Sources */,
+				8E14FB221FBD24E800DBFEFF /* StatusCell.swift in Sources */,
 				8E7F514B1FB0602800ABD7DD /* SignInContract.swift in Sources */,
+				8EBF80CF1FBAF9840016959E /* CreateContainerViewController.swift in Sources */,
 				8E7865DB1FA9A45300EF82DD /* BaseLocalData.swift in Sources */,
 				8E4054DC1FB999D100803F89 /* GroupsViewController.swift in Sources */,
 				23AAEDC31F9ED1120055702B /* ViewController.swift in Sources */,
 				8ECD60521FA7217600133F5A /* SignUpPresenterImp.swift in Sources */,
+				8E01C78C1FBC20FF001534D9 /* ListPresenter.swift in Sources */,
 				8E7865ED1FA9CA4900EF82DD /* HomeViewController.swift in Sources */,
 				8ECD60531FA7217600133F5A /* SignUpContract.swift in Sources */,
 				8EBAFDE71FA2D4A700B8C40E /* SignInViewController.swift in Sources */,
@@ -522,6 +577,7 @@
 				8ECD604E1FA7210F00133F5A /* CoreDataProtocol.swift in Sources */,
 				8EBA95091FB5416900674EB3 /* TblStatus.swift in Sources */,
 				8EBA950D1FB5455300674EB3 /* StatusLocalDataImp.swift in Sources */,
+				8E01C7831FBC15A6001534D9 /* CreateStatusProtocol.swift in Sources */,
 				8EBAFDE51FA2D49F00B8C40E /* SignUpViewController.swift in Sources */,
 				8E4054D71FB9352E00803F89 /* CreateStatusViewController.swift in Sources */,
 				8EBAFE391FA2EA2700B8C40E /* HoshiTextField.swift in Sources */,

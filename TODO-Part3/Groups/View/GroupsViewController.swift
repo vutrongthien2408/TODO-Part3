@@ -24,12 +24,14 @@ class GroupsViewController: UIViewController {
     private let navigationOpacity: Float = 1
     private let navigationShadow: CGFloat = 6
     
-    private var categories: [Category]?
+    private var categories: [CategoryObject]?
     private var presenter: CategoryPresenter?
+    private let categoryCellKey = "CategoryCell"
     
     @IBOutlet weak var contraintLeading: NSLayoutConstraint!
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var categoyTableView: UITableView!
+    @IBOutlet weak var categoryItemView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,10 +90,19 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as! CategoryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: categoryCellKey) as! CategoryCell
         let rowData = presenter?.categories[indexPath.row]
         cell.bind(category: rowData)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let rowData = presenter?.categories[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let listviewController =
+            storyboard.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+        listviewController.category = rowData
+        navigationController?.pushViewController(listviewController, animated: true)
     }
 
 }
