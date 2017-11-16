@@ -15,13 +15,21 @@ class Status {
     var title: String
     var descriptions: String
     var time: String
+    var location: String
     
-    init(accountName: String, categoryName: String, title: String, descriptions: String, time: String) {
+    init(accountName: String,
+        categoryName: String,
+        title: String,
+        descriptions: String,
+        time: String,
+        location: String
+        ) {
         self.accountName = accountName
         self.categoryName = categoryName
         self.title = title
         self.descriptions = descriptions
         self.time = time
+        self.location = location
     }
     
 }
@@ -33,4 +41,5 @@ extension Status {
     static let ColumnTitle = "title"
     static let ColumnDescriptions = "descriptions"
     static let ColumnTime = "time"
+    static let ColumnLocation = "location"
 }

@@ -102,6 +102,10 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController: SignUpView {
     
     func onInsertSuccess(username: String) {
+        UserDefaults.standard.set(
+            username,
+            forKey: AccountContract.ColumnUsername.rawValue
+        )
         let alert =  UIAlertController(
             title: signUpKey,
             message: SignUpResult.signUpSuccess.rawValue,

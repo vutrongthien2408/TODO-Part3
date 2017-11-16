@@ -54,6 +54,10 @@ extension SignInViewController: SignInView {
     
     func onSignInSuccess(username: String) {
         presenter = nil
+        UserDefaults.standard.set(
+            username,
+            forKey: AccountContract.ColumnUsername.rawValue
+        )
         self.performSegue(withIdentifier: self.signInToHomeIdentifier, sender: nil)
     }
 
