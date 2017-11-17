@@ -28,6 +28,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         textFieldSetKeyBoardType()
         presenter = SignInPresenterIpm(view: self)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,6 +50,12 @@ class SignInViewController: UIViewController {
             presenter?.checkSignInAccount(username: username, password: password)
         }
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        scrollView.setContentOffset(CGPoint.zero, animated: true)
+    }
+    
 }
 
 extension SignInViewController: SignInView {

@@ -15,6 +15,16 @@ enum CategoryType: String {
     case cities = "Cities"
 }
 
+enum NavigarionMenuType: String {
+    case home = "Home"
+    case calendar = "Calendar"
+    case overView = "OverView"
+    case groups = "Groups"
+    case lists = "Lists"
+    case profile = "Profile"
+    case timeLine = "Timeline"
+}
+
 class GroupsViewController: UIViewController {
     
     private var menuShowing = false
@@ -27,11 +37,15 @@ class GroupsViewController: UIViewController {
     private var categories: [CategoryObject]?
     private var presenter: CategoryPresenter?
     private let categoryCellKey = "CategoryCell"
+    private let listViewControllerKey = "ListViewController"
+    private let navigationCellKey = "NavigationMenuItem"
+    private let profileViewControllerKey = "ProfileViewController"
+    private let mainStoryboardKey = "Main"
+    private var navigationPresenter: NavigationPresenter?
     
     @IBOutlet weak var contraintLeading: NSLayoutConstraint!
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var categoyTableView: UITableView!
-    @IBOutlet weak var categoryItemView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +61,7 @@ class GroupsViewController: UIViewController {
         navigationView.layer.shadowRadius = navigationShadow
         prepareSwips()
         presenter = CategoryPresenter()
+        navigationPresenter = NavigationPresenter()
     }
     
     @IBAction func openMenu(_ sender: Any) {
@@ -72,6 +87,10 @@ class GroupsViewController: UIViewController {
     }
     
     @objc func leftSwiping(gesture:UIGestureRecognizer) {
+        closeNavigationMenu()
+    }
+    
+    func closeNavigationMenu() {
         if menuShowing {
             contraintLeading.constant = navigationContraintHide
         }
@@ -86,23 +105,54 @@ class GroupsViewController: UIViewController {
 extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.categories.count ?? 0
+        if tableView == categoyTableView {
+            return presenter?.categories.count ?? 0
+        }
+        return navigationPresenter?.navigations.count ?? 0;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: categoryCellKey) as! CategoryCell
-        let rowData = presenter?.categories[indexPath.row]
-        cell.bind(category: rowData)
+        if tableView == categoyTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: categoryCellKey) as! CategoryCell
+            let rowData = presenter?.categories[indexPath.row]
+            cell.bind(category: rowData)
+                return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: navigationCellKey) as! NavigationCell
+        let rowdata = navigationPresenter?.navigations[indexPath.row]
+        cell.bind(navigationItem: rowdata)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let rowData = presenter?.categories[indexPath.row]
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if tableView == categoyTableView {
+            categoryItemClick(row: indexPath.row)
+        } else {
+            navigationItemClick(row: indexPath.row)
+        }
+    }
+    
+    private func categoryItemClick(row: Int) {
+        let rowData = presenter?.categories[row]
+        let storyboard = UIStoryboard(name: mainStoryboardKey, bundle: nil)
         let listviewController =
-            storyboard.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+            storyboard.instantiateViewController(withIdentifier: listViewControllerKey) as! ListViewController
         listviewController.category = rowData
         navigationController?.pushViewController(listviewController, animated: true)
+    }
+    
+    private func navigationItemClick(row: Int) {
+        let rowData = navigationPresenter?.navigations[row]
+        let storyboard = UIStoryboard(name: mainStoryboardKey, bundle: nil)
+        if rowData == NavigarionMenuType.profile.rawValue {
+            let profileViewController =
+                storyboard.instantiateViewController(withIdentifier: profileViewControllerKey) as! ProfileViewController
+            navigationController?.pushViewController(profileViewController, animated: true)
+        }
+        if rowData == NavigarionMenuType.home.rawValue {
+            self.dismiss(animated: true, completion: nil)
+        }
+        closeNavigationMenu()
     }
 
 }

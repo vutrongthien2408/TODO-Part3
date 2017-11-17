@@ -56,6 +56,8 @@ class SignUpViewController: UIViewController {
         datePicker.datePickerMode = .date
         datePicker.isHidden = true
         lbBirthday.isHidden = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
     
@@ -95,6 +97,11 @@ class SignUpViewController: UIViewController {
             alert.addAction(cancelAction)
             present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        scrollView.setContentOffset(CGPoint.zero, animated: true)
     }
     
 }
