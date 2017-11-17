@@ -65,7 +65,9 @@ extension CreateContainerViewController: StatusView {
             message: mgs,
             preferredStyle: UIAlertControllerStyle.alert
         )
-        let cancelAction = UIAlertAction(title: ButtonTitle.ok.rawValue, style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: ButtonTitle.ok.rawValue, style: .cancel, handler: { action in
+            self.navigationController?.popToRootViewController(animated: true)
+        })
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
