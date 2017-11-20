@@ -42,6 +42,7 @@ class GroupsViewController: UIViewController {
     private let profileViewControllerKey = "ProfileViewController"
     private let mainStoryboardKey = "Main"
     private var navigationPresenter: NavigationPresenter?
+    private let goToCalendarIdentifier = "GoToCalendarIdentifier"
     
     @IBOutlet weak var contraintLeading: NSLayoutConstraint!
     @IBOutlet weak var navigationView: UIView!
@@ -148,9 +149,10 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
             let profileViewController =
                 storyboard.instantiateViewController(withIdentifier: profileViewControllerKey) as! ProfileViewController
             navigationController?.pushViewController(profileViewController, animated: true)
-        }
-        if rowData == NavigarionMenuType.home.rawValue {
+        } else if rowData == NavigarionMenuType.home.rawValue {
             self.dismiss(animated: true, completion: nil)
+        } else if rowData == NavigarionMenuType.calendar.rawValue {
+            self.performSegue(withIdentifier: goToCalendarIdentifier, sender: nil)
         }
         closeNavigationMenu()
     }

@@ -33,6 +33,7 @@ enum DateFormatStyle: String {
     case styleTwo = "MM/dd/yyyy"
     case styleThree = "dd/MM/yy"
     case styleFour = "MM/dd/yy"
+    case styleFive = "yyyy/MM/dd"
 }
 
 class SignUpViewController: UIViewController {
